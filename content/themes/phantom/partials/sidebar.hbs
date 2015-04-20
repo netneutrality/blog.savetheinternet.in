@@ -7,10 +7,14 @@
 			{{else}}
 			<h1 class="title"><a href="/">{{@blog.title}}</a></h1>
 			{{/if}}
+			<p class="description">{{{@blog.description}}}</p>
 
 			<div class="separator"></div>
+			{{#foreach navigation}}
+	            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+	        {{/foreach}}
 
-			<p class="description">{{{@blog.description}}}</p>
+			
 			<div class="social-icons">
 				<a href="https://github.com/netneutrality" class="icon icon-github"></a>
 				<a href="https://twitter.com/neutrality_in" class="icon icon-twitter"></a>
