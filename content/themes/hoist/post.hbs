@@ -1,0 +1,58 @@
+{{!< default}}
+{{#post}}
+
+<header>
+    <span><a href="{{@blog.url}}"><i class="fa fa-angle-left"></i>  Notes</a>  <time datetime="{{date format='DD MMM YYYY'}}"><div id="seperator">|</div>{{date format='DD MMM YYYY'}}</time> {{tags prefix="in "}}</span>
+</header>
+
+
+
+<article class="{{post_class}} full-post">
+
+<h1 class="post-title">{{{title}}}</h1>
+    
+<section class="post-content">
+        {{content}}
+</section>
+
+<footer class="post-footer">
+
+    <section class="author">
+         <img src="{{author.image}}" class="profileimage"> 
+
+        <p>
+            <strong><a href="{{#author}}{{url}}{{/author}}">Written by {{author.name}}</a></strong>
+            <br>
+            {{author.bio}}
+        </p>
+    </section>
+
+    <div class="color-blocks">
+        <div class="twitter hidden">
+            <a href="#" target="_blank" id="twitter-link">
+                <h4>Discuss this article on twitter</h4>
+                <i class="fa fa-twitter"></i>
+            </a>
+       </div>       
+
+
+        <div class="sign-up">
+            <form action="#" method="post"> <!-- Your createsend link here -->
+                <h4>Sign up to hear more!</h4>
+                <div class="input-group">
+                    <input class="form-control" input="" id="fieldEmail" name="cm-ngby-ngby" type="email" required="" placeholder="Email Address"> <!-- You may need to change the name attribute -->
+                    <div class="input-group-btn">
+                        <button class="btn btn-default colored" type="submit">Sign Up Now</button>
+                    </div>
+                </div>
+            </form>
+       </div>        
+    </div>
+
+
+</footer>
+
+</article>
+
+    {{/post}}
+

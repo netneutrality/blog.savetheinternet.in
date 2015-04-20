@@ -1,0 +1,26 @@
+{{!< default}}
+
+<header>
+    <h3>Topic : {{tag.name}}</h3>
+</header>
+
+
+
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+        <article class="{{post_class}}">
+            <a href="{{url}}" class="Article-Link">
+                <h2 class="post-title">{{{title}}}</h2>
+
+                <section class="post-excerpt">
+                    <p>{{excerpt}}&hellip;</p>
+                </section>
+            </a>
+
+            <span class="post-meta">
+                 <img src="{{author.image}}" class="profileimage"> <a href="{{#author}}{{url}}{{/author}}">{{author.name}}</a> {{tags prefix="on "}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            </span>
+        </article>
+    {{/foreach}}
+
+    {{pagination}}

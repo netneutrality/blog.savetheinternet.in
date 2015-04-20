@@ -1,0 +1,87 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/screen.css"}}" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/prism.css"}}" />
+
+    <script src="#"></script> <!-- Typekit config here -->
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <sidebar>
+        <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo"/></a>
+
+        
+        {{!-- <div>
+            <h4>Recomended Notes</h4>
+            {{#foreach all}}
+                {{this}}
+            {{/foreach}}
+        </div> --}}
+        
+        {{!-- <div>
+            <h4>Topics</h4>
+            <a href="/tag/design/">Design</a>
+            <a href="/tag/development/">Development</a>
+            <a href="/tag/startups/">Startups</a>
+            <a href="/tag/strategy/">Stratergy</a>
+        </div> --}}
+
+        <div>
+            <h4>Subscribe</h4>
+            <a href="/rss">RSS <i class="fa fa-rss"></i></a>
+            <a href="#" id="showEmail" >Join our email newsletter <i class="fa fa-envelope-o"></i></a>
+
+               
+                        <form action="#" method="post"> <!-- Your createsend link here -->
+                            <div class="input-group">
+                                <input class="form-control" input="" id="fieldEmail" name="cm-ngby-ngby" type="email" required="" placeholder="Email Address">  <!-- You may need to change the name attribute -->
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default colored" type="submit">Sign Up Now</button>
+                                </div>
+                            </div>
+                        </form>
+                      
+        </div>
+        
+
+    </sidebar>
+
+    <main>
+        <!-- Everything else gets inserted here-->
+        {{{body}}}
+        <header class="copyright">
+            <div>All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</div>
+        </header>
+    </main> 
+
+
+
+
+
+
+
+
+    {{ghost_foot}}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+   
+    <!--Google Analytics-->
+    <script>
+        // Tracking Code Here
+    </script>
+    <!--Google Analytics-->
+
+</body>
+</html>

@@ -1,0 +1,632 @@
+/* 
+
+Hoist Notes theme, created by Eliot Slevin at Hoist.io
+
+1 - Colors and Mixins
+2 - Basic Layout
+3 - Compressed Sidebar and layout
+4 -	Article Typography and Elements
+5 -	Sidebar content styling
+6 -	Page header structure and styling
+7 -	Post list styling
+8 -	Footer 
+
+*/
+
+
+/*============================================================
+1	Colors and Mixins
+============================================================*/
+
+$background-grey: #f2f2f2;
+$accent: rgba(255,0,0,0.5);
+$title-color: #2b93d8;
+$text-black: #333333;
+ 
+
+@mixin transition{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+
+
+
+/*============================================================
+2	Basic Layout
+============================================================*/
+
+
+html{
+	background-color: $background-grey;
+	font-family: sans-serif;
+}
+
+body{
+	margin: 0px;
+	font-size: 16px;
+}
+
+sidebar{
+    width: 400px;
+    float:left;
+}
+
+main{
+    width: calc(100% - 400px);
+    float: right;
+    background-color: white;
+    box-sizing: border-box;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+
+    	@media screen and (min-width: 1400px) {
+	    width: 960px;
+	    float: left;
+	    /*margin-left: 400px;*/
+  	}
+}
+
+
+/*============================================================
+3	Compressed sidebar layout
+============================================================*/
+@media screen and (max-width: 1000px) {
+    sidebar{ 
+    	width: 300px; 
+
+    	div{
+    		padding-left: 2rem !important;
+    		padding-right: 2rem !important; 
+    	}
+
+    	form div{
+    		padding: 0px !important;
+    	}
+    }
+
+    main{
+    	width: calc(100% - 300px);
+    	 padding-left: 2rem;
+    	padding-right: 2rem;
+    }
+
+	header{
+		margin-left: -2rem !important;
+		margin-right: -2rem !important;
+		margin-bottom: 2rem !important;
+	}
+
+	.color-blocks{
+		margin-left: -2rem !important;
+		margin-right: -2rem !important;
+		width: calc(100% + 2rem + 2rem) !important;
+	}
+
+
+}
+
+
+
+
+
+
+
+/*============================================================
+4	Article Typography and Elements
+============================================================*/
+
+h1, h2, h3, h4{
+	font-family: "proxima-nova", sans-serif;
+	color: $title-color;
+}
+
+h1{
+	font-size: 40px;
+	font-weight: 800;
+	margin-top: 3.75rem;
+	margin-bottom: 3.75rem;
+}
+
+
+p, ul, ol, li, blockquote{
+	font-family: "expo-serif-pro", serif;
+	color: $text-black;
+}
+
+li{
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	p{
+		//Incase somebody accidenatly puts a <p> in a <li>
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+}
+
+
+
+p{
+	color: $text-black;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	font-weight: 300;
+	font-size: 18px;
+}
+
+blockquote{
+	margin: 0px;
+	border-left: 3px solid $title-color;
+	padding-left: 25px;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	p{
+		font-size: 25px;
+		font-style: italic;
+	}
+}
+
+hr{
+	width: 40%;
+	border: none;
+	height: 1px;
+	background-color: $background-grey;
+}
+
+a{
+	color: $title-color;
+	text-decoration: none;
+
+ @include transition;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.post-content{
+	line-height: 1.5;
+	font-size: 18px;
+
+	img{
+		max-width: 100%;
+		padding-bottom: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+}
+
+
+
+
+/*============================================================
+5	Sidebar content styling
+============================================================*/
+sidebar{
+
+	img{
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+
+	div{
+		box-sizing: border-box;
+		padding-left: 3.75rem;
+		padding-right: 3.75rem;
+		padding-bottom: 2rem;
+
+		h4, a{
+			display: block;
+			width: 100%;
+		}
+
+		h4{
+			border-bottom: 1px solid $accent;
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			margin-top: 0px;
+			font-weight: 600;
+			color: $accent;
+			font-size: 18px;
+		}
+
+		a{
+			font-family: "proxima-nova", sans-serif;
+			color: $text-black;
+			text-decoration: none;
+			padding: 8px;
+			margin-left: -8px;
+		}
+
+		a:hover{
+			background-color: white;
+			color: $accent;
+		}
+	}
+
+	.show{
+		opacity: 1 !important;
+	}
+
+	.input-group{
+			opacity: 0;
+			padding: 0px;
+			margin-top: 20px;
+
+			@include transition;
+
+			input{
+				font-family: "proxima-nova", sans-serif;
+				font-size: 13px;
+				border-style: none;
+				padding: 12px;
+
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+				float: left;
+				width: calc(100% - 100px);
+			}
+
+			button{
+				border-style: none;
+				background-color: $title-color;
+				font-family: "proxima-nova", sans-serif;
+				font-size: 13px;
+				color: white;
+				padding: 12px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+
+			.input-group-btn{
+				padding: 0px;
+			}
+		}
+}
+
+
+
+
+/*============================================================
+6	Page header structure and styling
+============================================================*/
+
+header{
+	background-color: $background-grey;
+
+	margin-left: -3.75rem;
+	margin-right: -3.75rem;
+	margin-bottom: 3.75rem;
+
+	span{
+		font-family: "proxima-nova", sans-serif;
+		font-size: 13px;
+		text-transform: uppercase;
+		color: #666666;
+		letter-spacing: 1px;
+	}
+
+	a{
+		color: $title-color;
+		font-weight: 600;
+		line-height: 60px;
+		text-decoration: none;
+	}
+
+	
+	#seperator{
+		padding-left: 20px;
+		padding-right: 20px;
+		display: inline-block;
+	}
+
+
+	h3{
+		margin: 0px;
+		text-align: center;
+		line-height: 140px;
+		font-size: 40px;
+		font-family: "proxima-nova", sans-serif;
+		color: $text-black;
+	}
+}
+
+	.author-header{
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		img{
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			border: 5px solid white;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+
+		p{
+			text-align: center;
+			max-width: 660px;
+			margin-left: auto;
+			margin-right: auto;
+
+			strong{
+				font-size: 40px;
+				font-family: "proxima-nova", sans-serif;
+			}
+		}
+	}
+
+
+
+/*============================================================
+7	Post list styling
+============================================================*/
+
+.profileimage{
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	margin-bottom: -5px;
+}
+
+article.post{
+
+	margin-bottom: 3.75rem;
+	padding-bottom: 3.75rem;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.post-meta{
+	display: block;
+	width: 100%;
+	text-align: left;
+	font-family: "proxima-nova", sans-serif;
+	color: rgba(0,0,0,0.5);
+}
+
+
+
+
+
+/*============================================================
+8	Footer 
+============================================================*/
+
+
+// Pagination 
+nav{
+	padding-bottom: 3.75rem;
+
+	font-family: "proxima-nova", sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	text-align: center;
+
+	span{
+		text-align: center;
+		color: rgba(0,0,0,0.5);
+		font-weight: 600;
+		padding-left: 3.75rem;
+		padding-right: 3.75rem;
+	}
+
+	a{
+		padding: 10px;
+		border: 1px solid rgba(0,0,0,0.1);
+		border-radius: 5px;
+	}
+
+	a:hover{
+		background-color: $background-grey;
+		text-decoration: none;
+	}
+
+}
+
+.copyright div{
+	padding-bottom:20px;
+	line-height:40px;
+	font-family: "expo-serif-pro", serif;
+	font-size: 13px;
+	opacity: 0.5;
+	text-align: center;
+	width: 100%;
+	text-transform: none;
+}
+
+.copyright{
+	margin-bottom: 0px !important;
+}
+
+
+
+//The footer of posts
+.author{
+	border-top: 1px solid $background-grey;
+	overflow: hidden; //clearfix
+
+	img.profileimage{
+		height: 70px;
+		width: 70px;;
+		float: left;
+		margin: 2rem;
+		margin-left: 0;
+		box-sizing: border-box;
+	}
+
+	p{
+		float: right;
+		width: calc(100% - 70px - 2rem);
+		font-family: "proxima-nova", sans-serif;
+		font-size: 16px;
+
+		strong{
+			margin-bottom: 10px;
+			display: inline-block;
+		}
+	}
+}
+
+//Twitter comments and email signup blocks
+.color-blocks{
+	width: calc(100% + 3.75rem + 3.75rem);
+	margin-left: -3.75rem;
+	margin-right: -3.75rem;
+	overflow: hidden;
+	height: 200px;
+
+	.hidden{
+		display: none;
+	}
+
+	.twitter, .sign-up{
+		box-sizing: border-box;
+		padding: 3rem;
+	}
+
+	h4{
+		color: white !important;
+		font-size: 22px;
+		font-weight: 600;
+		margin-top: 0px;
+		margin-bottom: 2rem;
+	}
+
+	i{
+		color: white;
+		display: block;
+		text-align: center;
+		width: 100%;
+		font-size: 40px;
+		margin-bottom: 3rem;
+	}
+
+	a h4{
+		width: 100%;
+		text-align: center;
+	}
+
+	.twitter{
+		width: 40%;
+		height: 100%;
+		background-color: $title-color;
+		float: left;
+
+		  @include transition;
+
+		&:hover{
+			background-color: #13bca4;
+		}
+
+		a:hover{
+			text-decoration: none;
+		}
+	}
+
+	.sign-up{
+		height: 100%;
+		background-color: $text-black;
+		overflow: hidden;
+
+		.input-group{
+			input{
+				font-family: "proxima-nova", sans-serif;
+				font-size: 13px;
+				border-style: none;
+				padding: 12px;
+
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+				float: left;
+				width: calc(100% - 100px);
+			}
+
+			button{
+				border-style: none;
+				background-color: $title-color;
+				font-family: "proxima-nova", sans-serif;
+				font-size: 13px;
+				color: white;
+				padding: 12px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+		}
+	}
+}
+
+.full-post {
+	border-bottom: 0px !important;
+	margin-bottom: 0px	!important;
+	padding-bottom: 0px	!important;
+}
+
+
+
+
+
+/*============================================================
+9	Mobile Responsive Styles
+============================================================*/
+
+@media screen and (max-width: 800px) {
+    sidebar{ 
+    	width: 100%; 
+    	display: block;
+    	float: left;
+    	position: static;
+    	height: auto;
+
+    	img{
+    		width: 100px;
+    		margin-top: 50px;
+    		margin-bottom: 50px;
+    	}
+
+    	div{
+	    	display: none;
+    	}
+    }
+
+    main{
+    	width: calc(100%);
+    	 padding-left: 2rem;
+    	padding-right: 2rem;
+    }
+
+	header{
+		text-align: center;
+	}
+
+	.twitter, .sign-up{
+		width: 100% !important;
+		float: left;
+	}
+
+	.pagination span{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

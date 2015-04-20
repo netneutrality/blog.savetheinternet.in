@@ -1,0 +1,433 @@
+/* 
+
+Hoist Notes theme, created by Eliot Slevin at Hoist.io
+
+1 - Colors and Mixins
+2 - Basic Layout
+3 - Compressed Sidebar and layout
+4 -	Article Typography and Elements
+5 -	Sidebar content styling
+6 -	Page header structure and styling
+7 -	Post list styling
+8 -	Footer 
+
+*/
+/*============================================================
+1	Colors and Mixins
+============================================================*/
+/*============================================================
+2	Basic Layout
+============================================================*/
+html {
+  background-color: #f2f2f2;
+  font-family: sans-serif; }
+
+body {
+  margin: 0px;
+  font-size: 16px; }
+
+sidebar {
+  width: 400px;
+  float: left; }
+
+main {
+  width: calc(100% - 400px);
+  float: right;
+  background-color: white;
+  box-sizing: border-box;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem; }
+  @media screen and (min-width: 1400px) {
+    main {
+      width: 960px;
+      float: left;
+      /*margin-left: 400px;*/ } }
+
+/*============================================================
+3	Compressed sidebar layout
+============================================================*/
+@media screen and (max-width: 1000px) {
+  sidebar {
+    width: 300px; }
+    sidebar div {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important; }
+    sidebar form div {
+      padding: 0px !important; }
+
+  main {
+    width: calc(100% - 300px);
+    padding-left: 2rem;
+    padding-right: 2rem; }
+
+  header {
+    margin-left: -2rem !important;
+    margin-right: -2rem !important;
+    margin-bottom: 2rem !important; }
+
+  .color-blocks {
+    margin-left: -2rem !important;
+    margin-right: -2rem !important;
+    width: calc(100% + 2rem + 2rem) !important; } }
+/*============================================================
+4	Article Typography and Elements
+============================================================*/
+h1, h2, h3, h4 {
+  font-family: "proxima-nova", sans-serif;
+  color: #2b93d8; }
+
+h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 3.75rem;
+  margin-bottom: 3.75rem; }
+
+p, ul, ol, li, blockquote {
+  font-family: "expo-serif-pro", serif;
+  color: #333333; }
+
+li {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+  li p {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+
+p {
+  color: #333333;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 18px; }
+
+blockquote {
+  margin: 0px;
+  border-left: 3px solid #2b93d8;
+  padding-left: 25px;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+  blockquote p {
+    font-size: 25px;
+    font-style: italic; }
+
+hr {
+  width: 40%;
+  border: none;
+  height: 1px;
+  background-color: #f2f2f2; }
+
+a {
+  color: #2b93d8;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+a:hover {
+  text-decoration: underline; }
+
+.post-content {
+  line-height: 1.5;
+  font-size: 18px; }
+  .post-content img {
+    max-width: 100%;
+    padding-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
+
+/*============================================================
+5	Sidebar content styling
+============================================================*/
+sidebar img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 100px;
+  margin-bottom: 100px; }
+sidebar div {
+  box-sizing: border-box;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
+  padding-bottom: 2rem; }
+  sidebar div h4, sidebar div a {
+    display: block;
+    width: 100%; }
+  sidebar div h4 {
+    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-weight: 600;
+    color: rgba(255, 0, 0, 0.5);
+    font-size: 18px; }
+  sidebar div a {
+    font-family: "proxima-nova", sans-serif;
+    color: #333333;
+    text-decoration: none;
+    padding: 8px;
+    margin-left: -8px; }
+  sidebar div a:hover {
+    background-color: white;
+    color: rgba(255, 0, 0, 0.5); }
+sidebar .show {
+  opacity: 1 !important; }
+sidebar .input-group {
+  opacity: 0;
+  padding: 0px;
+  margin-top: 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  sidebar .input-group input {
+    font-family: "proxima-nova", sans-serif;
+    font-size: 13px;
+    border-style: none;
+    padding: 12px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    float: left;
+    width: calc(100% - 100px); }
+  sidebar .input-group button {
+    border-style: none;
+    background-color: #2b93d8;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 13px;
+    color: white;
+    padding: 12px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; }
+  sidebar .input-group .input-group-btn {
+    padding: 0px; }
+
+/*============================================================
+6	Page header structure and styling
+============================================================*/
+header {
+  background-color: #f2f2f2;
+  margin-left: -3.75rem;
+  margin-right: -3.75rem;
+  margin-bottom: 3.75rem; }
+  header span {
+    font-family: "proxima-nova", sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #666666;
+    letter-spacing: 1px; }
+  header a {
+    color: #2b93d8;
+    font-weight: 600;
+    line-height: 60px;
+    text-decoration: none; }
+  header #seperator {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block; }
+  header h3 {
+    margin: 0px;
+    text-align: center;
+    line-height: 140px;
+    font-size: 40px;
+    font-family: "proxima-nova", sans-serif;
+    color: #333333; }
+
+.author-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .author-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
+  .author-header p {
+    text-align: center;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto; }
+    .author-header p strong {
+      font-size: 40px;
+      font-family: "proxima-nova", sans-serif; }
+
+/*============================================================
+7	Post list styling
+============================================================*/
+.profileimage {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-bottom: -5px; }
+
+article.post {
+  margin-bottom: 3.75rem;
+  padding-bottom: 3.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+.post-meta {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: "proxima-nova", sans-serif;
+  color: rgba(0, 0, 0, 0.5); }
+
+/*============================================================
+8	Footer 
+============================================================*/
+nav {
+  padding-bottom: 3.75rem;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center; }
+  nav span {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem; }
+  nav a {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px; }
+  nav a:hover {
+    background-color: #f2f2f2;
+    text-decoration: none; }
+
+.copyright div {
+  padding-bottom: 20px;
+  line-height: 40px;
+  font-family: "expo-serif-pro", serif;
+  font-size: 13px;
+  opacity: 0.5;
+  text-align: center;
+  width: 100%;
+  text-transform: none; }
+
+.copyright {
+  margin-bottom: 0px !important; }
+
+.author {
+  border-top: 1px solid #f2f2f2;
+  overflow: hidden; }
+  .author img.profileimage {
+    height: 70px;
+    width: 70px;
+    float: left;
+    margin: 2rem;
+    margin-left: 0;
+    box-sizing: border-box; }
+  .author p {
+    float: right;
+    width: calc(100% - 70px - 2rem);
+    font-family: "proxima-nova", sans-serif;
+    font-size: 16px; }
+    .author p strong {
+      margin-bottom: 10px;
+      display: inline-block; }
+
+.color-blocks {
+  width: calc(100% + 3.75rem + 3.75rem);
+  margin-left: -3.75rem;
+  margin-right: -3.75rem;
+  overflow: hidden;
+  height: 200px; }
+  .color-blocks .hidden {
+    display: none; }
+  .color-blocks .twitter, .color-blocks .sign-up {
+    box-sizing: border-box;
+    padding: 3rem; }
+  .color-blocks h4 {
+    color: white !important;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 2rem; }
+  .color-blocks i {
+    color: white;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 3rem; }
+  .color-blocks a h4 {
+    width: 100%;
+    text-align: center; }
+  .color-blocks .twitter {
+    width: 40%;
+    height: 100%;
+    background-color: #2b93d8;
+    float: left;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .color-blocks .twitter:hover {
+      background-color: #13bca4; }
+    .color-blocks .twitter a:hover {
+      text-decoration: none; }
+  .color-blocks .sign-up {
+    height: 100%;
+    background-color: #333333;
+    overflow: hidden; }
+    .color-blocks .sign-up .input-group input {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 13px;
+      border-style: none;
+      padding: 12px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      float: left;
+      width: calc(100% - 100px); }
+    .color-blocks .sign-up .input-group button {
+      border-style: none;
+      background-color: #2b93d8;
+      font-family: "proxima-nova", sans-serif;
+      font-size: 13px;
+      color: white;
+      padding: 12px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px; }
+
+.full-post {
+  border-bottom: 0px !important;
+  margin-bottom: 0px	!important;
+  padding-bottom: 0px	!important; }
+
+/*============================================================
+9	Mobile Responsive Styles
+============================================================*/
+@media screen and (max-width: 800px) {
+  sidebar {
+    width: 100%;
+    display: block;
+    float: left;
+    position: static;
+    height: auto; }
+    sidebar img {
+      width: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px; }
+    sidebar div {
+      display: none; }
+
+  main {
+    width: calc(100%);
+    padding-left: 2rem;
+    padding-right: 2rem; }
+
+  header {
+    text-align: center; }
+
+  .twitter, .sign-up {
+    width: 100% !important;
+    float: left; }
+
+  .pagination span {
+    display: none; } }
+
+/*# sourceMappingURL=screen.css.map */

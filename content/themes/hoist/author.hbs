@@ -1,0 +1,29 @@
+{{!< default}}
+
+<header class="author-header">
+        <img src="{{author.image}}" class="profileimage">
+        <p>
+             <strong>{{author.name}}</strong><br>
+            {{author.bio}}
+        </p>
+</header>
+
+
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+        <article class="{{post_class}}">
+            <a href="{{url}}" class="Article-Link">
+                <h2 class="post-title">{{{title}}}</h2>
+
+                <section class="post-excerpt">
+                    <p>{{excerpt}}&hellip;</p>
+                </section>
+            </a>
+
+            <span class="post-meta">
+                 {{tags suffix=" | "}} <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            </span>
+        </article>
+    {{/foreach}}
+
+    {{pagination}}
